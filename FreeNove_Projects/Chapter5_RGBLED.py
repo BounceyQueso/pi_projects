@@ -2,13 +2,14 @@ import RPi.GPIO as GPIO
 import time
 import random
 
-pins = {'redPin':11, 'greenPin':12, 'bluePin':13}
+pins = {'redPin':29, 'greenPin':12, 'bluePin':32}
+pin_list = list(pins.values())
 
 def setup():
     global pwmRed, pwmGreen, pwmBlue
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pins, GPIO.OUT)
-    GPIO.setup(pins, GPIO.HIGH)
+    GPIO.setup(pin_list, GPIO.OUT)
+    GPIO.setup(pin_list, GPIO.HIGH)
     pwmRed = GPIO.PWM(pins['redPin'], 2000)
     pwmRed.start(0)
     pwmGreen = GPIO.PWM(pins['greenPin'], 2000)
