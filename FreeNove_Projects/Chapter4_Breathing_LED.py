@@ -17,7 +17,7 @@ def loop():
         for dc in range(0, 101, 1):
             p.ChangeDutyCycle(dc)
             time.sleep(0.01)
-        time.sleep(.5)
+        time.sleep(.75)
         for dc in range(100,-1,-1):
             p.ChangeDutyCycle(dc)
             time.sleep(0.01)
